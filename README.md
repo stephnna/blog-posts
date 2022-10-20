@@ -1,24 +1,40 @@
-# README
+# database_based_on_diagram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This a Blog app in development with rails and PostgreSQL.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+If you wish to run the project locally, please do the following:
 
-* System dependencies
+- Clone the repository to your local machine. - **`git@github.com:stephnna/blog-posts.git`**
+- Run rails s for server
 
-* Configuration
+## Author
 
-* Database creation
+👤 **Ezea Stephen Nnabuike**
 
-* Database initialization
+- GitHub: [@stephnna](https://github.com/stephnna)
+- Twitter: [@stephnna](https://twitter.com/stephnna)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/stephen-ezea/)
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## 🤝 Contributing
 
-* ...
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
