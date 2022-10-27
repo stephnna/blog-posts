@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
-  def index
- end
+  def index    
+    @user = User.find()         
+  end
 
-  def show    
+  def show      
+  end
 end
 

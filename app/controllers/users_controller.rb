@@ -5,11 +5,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @post = Post.find(params[:id])
-    @comment = Post.find(params[:id])
+    @post = Post.find(@user.id)
+    @comment = Comment.find(@post.author_id)
+    @like = Like.find(@post.author_id)
+   
     Post.updates_posts_counter(@user.id)
-    Comment.updates_comments_counter(@post.id)
-    Like.updates_likes_counter(@post.id)
+    Comment.updates_comments_counter(@comment.post_id)
+    Like.updates_likes_counter(@like.post_id)
     @posts = User.three_recent_posts_for_user(@user.id)               
   end  
 end

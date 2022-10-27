@@ -1,6 +1,4 @@
-<div class="users-cont">
-  <%= link_to "users/#{user.id}" do          %>
-        <div class="name-cont"><%= user.name %></div>
-        <div class="post-cont"> Number of posts: <%= user.posts_counter%></div><br>
- <%  end %>
-  </div>
+<%=link_to "users/#{user.id}" do%>
+<div><%=user.name%></div>
+<div>Number of posts: <%= user.posts_counter%></div><br>
+<% end %>
