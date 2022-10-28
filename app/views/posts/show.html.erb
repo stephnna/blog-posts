@@ -1,1 +1,9 @@
-<h1>goo</h1>
+<div><strong>post #<%=@post.id%> by <%=@post.author.name%></strong> Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%><br>
+<%=@post.text...%>
+<ol>
+<%@post.comments.each do |comment|%>
+<li><%=comment.author.name%>: <%=comment.text%></li><br>
+<%end%>
+</ol>
+</div><br>
+
