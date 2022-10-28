@@ -9,8 +9,8 @@ class Post < ApplicationRecord
   scope :updates_posts_counter, lambda { |id_value|
                                   User.find(id_value).update(posts_counter: Post.where(author_id: id_value).count(:text))
                                 }
-  
+
   def recent_comments
-    comments.last(5)    
+    comments.last(5)
   end
 end
