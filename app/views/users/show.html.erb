@@ -1,1 +1,15 @@
-<h1>Each User details goes here!</h1>
+<%= render @user %>
+<div><span>bio</span><p><%= @user.bio %>
+<% @posts.each do |post| %>
+<div><strong>post #<%=post.id%></strong><br><%=post.text...%><br>
+<%= link_to "/users/#{@user.id}/posts" do %>
+Comments: <%=post.comments_counter%>
+<%end%>
+, Likes: <%=post.likes_counter%></div><br>
+<% end %>
+<%= link_to "/users/#{@user.id}/posts" do %>
+<button>See all posts</button>
+<%end%>
+
+ 
+  

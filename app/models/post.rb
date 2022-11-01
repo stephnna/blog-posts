@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :author, class_name: 'User'
   has_many :comments
 
   validates :title, presence: true, length: { in: 1..250 }
@@ -9,6 +9,7 @@ class Post < ApplicationRecord
   scope :updates_posts_counter, lambda { |id_value|
                                   User.find(id_value).update(posts_counter: Post.where(author_id: id_value).count(:text))
                                 }
+
   scope :five_recent_comments_for_post, lambda { |id_value|
                                           Comment.where(post_id: id_value).limit(5).order(created_at: :desc)
                                         }
