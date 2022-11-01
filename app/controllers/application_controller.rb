@@ -1,2 +1,5 @@
-class ApplicationController < ActionController::Base  
+class ApplicationController < ActionController::Base
+  def current_user
+    User.find(params[:id])
+  end
 end
