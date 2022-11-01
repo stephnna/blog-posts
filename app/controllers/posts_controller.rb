@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = current_user
+    @comments_all = Post.five_recent_comments_for_post(@user.id)
   end
 
   def show

@@ -10,7 +10,7 @@ class Post < ApplicationRecord
                                   User.find(id_value).update(posts_counter: Post.where(author_id: id_value).count(:text))
                                 }
 
-  def recent_comments
-    comments.last(5)
-  end
+  scope :five_recent_comments_for_post, lambda { |id_value|
+                                          Comment.where(post_id: id_value).limit(5).order(created_at: :desc)
+                                        }
 end

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = current_user
     @post = Post.find(@user.id)
     @comment = Comment.find(@post.author_id)
-    @like = Like.find(@post.author_id)
+    @like = Like.find(@post.id)
 
     Post.updates_posts_counter(@user.id)
     Comment.updates_comments_counter(@comment.post_id)

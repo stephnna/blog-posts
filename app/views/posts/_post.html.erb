@@ -1,8 +1,9 @@
 <div><strong>post #<%=post.id%></strong><br><%=post.text...%><br>Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%>
 <ol>
-<%post.comments.each do |comment|%>
+<%@comments_all.each do |comment|%>
 <li><%=comment.author.name%>: <%=comment.text%></li><br>
 <%end%>
 </ol>
 </div><br>
+
 
