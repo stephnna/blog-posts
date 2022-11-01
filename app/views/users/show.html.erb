@@ -7,6 +7,11 @@ Comments: <%=post.comments_counter%>
 <%end%>
 , Likes: <%=post.likes_counter%></div><br>
 <% end %>
+
+<%= link_to "/users/#{@user.id}/posts/new" do %>
+<button>New Post</button>
+<%end%>
+
 <%= link_to "/users/#{@user.id}/posts" do %>
 <button>See all posts</button>
 <%end%>
