@@ -1,0 +1,7 @@
+<%= form_with model: @post, local: true do |f| %>
+  <%=f.label :title%>
+  <%= f.text_field :title, placeholder: "title" %><br><br>
+  <%= f.label :text %>
+  <%= f.text_area :text, placeholder: "Write your post here" %><br>  
+<% end %>
+<button type="Submit">Post Message</button>

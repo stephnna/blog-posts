@@ -13,5 +13,5 @@ class UsersController < ApplicationController
     Comment.updates_comments_counter(@comment.post_id)
     Like.updates_likes_counter(@like.post_id)
     @posts = User.three_recent_posts_for_user(@user.id)
-  end
+  end  
 end
