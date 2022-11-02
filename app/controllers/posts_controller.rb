@@ -9,21 +9,25 @@ class PostsController < ApplicationController
   end
 
   def new
-    @author = Post.new
+    post = Post.new
     respond_to do |format|
-      format.html { render :new, locals: { author: @author } }
+      format.html { render :new, locals: { post: post } }
     end          
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :text))
-    @post.author = current_user
-
-    if @post.valid?
-      @post.save
-      redirect_to new_user_post_url(current_user)
-    else
-      redirect_to new_post_path_url
+    post = Post.new(params.require(:post).permit(:title, :text))
+    post.author = current_user
+    respond_to do |format|
+      format.html do
+        if post.save          
+          redirect_to "/users/#{post.author_id}"
+          flash[:success] = "Post saved successfully"
+        else
+          flash.now[:error] = "Error: Post could not be saved"
+          render :new, locals: { post: post }
+        end
+      end 
     end
   end
 end

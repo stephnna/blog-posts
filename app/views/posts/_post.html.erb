@@ -1,4 +1,4 @@
-<div><strong>post #<%=post.id%></strong><br><%=post.text...%><br>Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%>
+<div><strong>Post #<%=post.id%></strong><br><strong>Title: <%=post.title%></strong><br><%=post.text...%><br>Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%>
 <ol>
 <%@comments_all.each do |comment|%>
 <li><%=comment.author.name%>: <%=comment.text%></li><br>

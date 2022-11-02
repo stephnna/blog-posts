@@ -1,17 +1,15 @@
 <%= render @user %>
-<div><span>bio</span><p><%= @user.bio %>
-<% @posts.each do |post| %>
-<div><strong>post #<%=post.id%></strong><br><%=post.text...%><br>
-<%= link_to "/users/#{@user.id}/posts" do %>
-Comments: <%=post.comments_counter%>
-<%end%>
-, Likes: <%=post.likes_counter%></div><br>
-<% end %>
-
+<div><span>bio</span><p><%= @user.bio %><br><br>
 <%= link_to "/users/#{@user.id}/posts/new" do %>
 <button>New Post</button>
 <%end%>
-
+<% @posts.each do |post| %>
+<div><strong>Post #<%=post.id%></strong><br><strong>Title: <%=post.title%></strong><br><%=post.text...%><br>
+<%= link_to "/users/#{@user.id}/posts" do %>
+Comments: <%=post.comments_counter%>
+<% end %>
+, Likes: <%=post.likes_counter%></div><br>
+<% end %>
 <%= link_to "/users/#{@user.id}/posts" do %>
 <button>See all posts</button>
 <%end%>
