@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    post = Post.new              
+    @post = Post.new
   end
 
   def create
@@ -20,7 +20,6 @@ class PostsController < ApplicationController
       redirect_to "/users/#{post.author_id}"
     else
       redirect_to user_posts_url
-    end    
+    end
   end
 end
-
