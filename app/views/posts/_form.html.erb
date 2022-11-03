@@ -1,0 +1,7 @@
+<%= form_with model: Post, url: user_posts_url do |form| %>
+  <%= form.label :title%>
+  <%= form.text_field :title, placeholder: "title" %><br><br>
+  <%= form.label :text %>
+  <%= form.text_area :text, placeholder: "Write your post here" %><br>  
+  <%=form.submit "Post Message"%>
+<% end %>

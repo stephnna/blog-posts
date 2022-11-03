@@ -1,6 +1,17 @@
-<div><strong>post #<%=@post.id%> by <%=@post.author.name%></strong> Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%><br>
+<div><strong>Post #<%=@post.id%> by <%=@post.author.name%></strong> Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%>
+<%= form_with model: Like, url:  "/users/#{@post.author_id}/posts/#{:post_id}/likes" do |form| %>
+  <%= form.hidden_field :post_id, value: @post.id %>
+  <%=form.submit "Like"%> 
+<% end %>
+
 <%=@post.text...%>
+<%= form_with model: Comment, url:  "/users/#{@post.author_id}/posts/#{:post_id}/comments" do |form| %>
+   <%= form.hidden_field :post_id, value: @post.id %>
+   <%= form.text_field :text, placeholder: 'Your comment...'%>
+   <%=form.submit "Comment"%> 
+<% end %>
 <ol>
+
 <%@post.comments.each do |comment|%>
 <li><%=comment.author.name%>: <%=comment.text%></li><br>
 <%end%>

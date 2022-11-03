@@ -1,0 +1,5 @@
+<%= form_with model: Comment, url:  "/users/#{post.author_id}/posts/#{post.id}/comments" do |form| %>
+   <%= form.hidden_field :post_id, value: post.id %>
+   <%= form.text_field :text, placeholder: 'Your comment...'%>
+   <%=form.submit "Comment"%> 
+<% end %>
