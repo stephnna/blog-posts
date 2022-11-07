@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     post.author = current_user
     if post.valid?
       post.save
-      redirect_to "/users/#{post.author_id}"
+      redirect_to user_path(post.author_id)
     else
       redirect_to user_posts_url
     end
