@@ -1,9 +1,0 @@
-
-<%= form_with model: Comment do |form| %>
-  <%= form.hidden_field :post_id, value: post.id %>
-  <div class="w-full min-w-0">
-    <%= form.text_field :text, placeholder: 'Your comment...', class: input_classes %>
-  </div>
-  <div>    
-  </div>
-<% end %>
