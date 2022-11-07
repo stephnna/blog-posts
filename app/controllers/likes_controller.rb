@@ -6,6 +6,6 @@ class LikesController < ApplicationController
 
     like.save
     Like.updates_likes_counter(like.post_id)
-    redirect_to  user_post_likes_url
+    redirect_to user_post_likes_url
   end
 end
