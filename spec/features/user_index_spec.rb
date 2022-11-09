@@ -22,6 +22,12 @@ RSpec.describe 'User index', type: :feature do
   describe 'integration' do
     before(:each) { visit users_path }
 
+    scenario 'displays profile picture for each user' do
+      @users.each do |user|
+        expect(page).to have_css("img[src*='#{user.photo}']")
+      end
+    end
+
     scenario 'shows the username of all other users' do
       @users.each do |user|
         expect(page).to have_content(user.name)
@@ -38,6 +44,6 @@ RSpec.describe 'User index', type: :feature do
       @users.each do |user|
         expect(page).to have_content "Number of posts"
       end
-    end    
+    end   
   end
 end
