@@ -46,7 +46,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Gem that solves N + 1 query
-gem 'bullet', group: 'development'
+
+gem 'bullet'
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -78,6 +80,8 @@ group :test do
 end
 
 group :development, :test do
+  # Add database cleaner
+  gem "database_cleaner"
   # test with rspec
-  gem 'rspec-rails'
+  gem 'rspec-rails'  
 end
