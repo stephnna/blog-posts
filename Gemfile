@@ -52,7 +52,6 @@ gem 'bootsnap', require: false
 
 gem 'bullet'
 
-
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -84,7 +83,7 @@ end
 
 group :development, :test do
   # Add database cleaner
-  gem "database_cleaner"
+  gem 'database_cleaner'
   # test with rspec
-  gem 'rspec-rails'  
+  gem 'rspec-rails'
 end

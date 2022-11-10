@@ -41,9 +41,9 @@ RSpec.describe 'User index', type: :feature do
     end
 
     scenario 'displays some text' do
-      @users.each do |user|
-        expect(page).to have_content "Number of posts"
+      @users.each do |_user|
+        expect(page).to have_content 'Number of posts'
       end
-    end   
+    end
   end
 end
