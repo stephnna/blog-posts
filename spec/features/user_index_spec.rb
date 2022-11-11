@@ -45,7 +45,7 @@ RSpec.describe 'User index', type: :feature do
         expect(page).to have_content 'Number of posts'
       end
     end
-    
+
     scenario 'users directs to show page when clicked' do
       within all('.user')[0] do
         click_link @first_user.name
