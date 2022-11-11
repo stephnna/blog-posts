@@ -81,4 +81,11 @@ RSpec.describe 'Post index', type: :feature do
       expect(page).to have_content("Likes: #{@first_post.likes_counter}")
     end
   end
+
+  scenario 'redirects to posts show page when clicked' do
+    within all('.post')[0] do
+      find('a').click
+      expect(page).to have_current_path user_post_path(@first_user, @first_post)
+    end
+  end
 end
