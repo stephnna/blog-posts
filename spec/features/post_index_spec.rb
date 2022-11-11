@@ -55,7 +55,7 @@ RSpec.describe 'Post index', type: :feature do
       expect(page).to have_content "Number of posts: #{@first_user.posts_counter}"
     end
 
-    scenario 'displays a post title' do      
+    scenario 'displays a post title' do
       within all('.post')[0] do
         expect(page).to have_content @first_post.title
       end
@@ -79,6 +79,6 @@ RSpec.describe 'Post index', type: :feature do
 
     scenario 'displays number of likes for each post' do
       expect(page).to have_content("Likes: #{@first_post.likes_counter}")
-    end  
+    end
   end
 end

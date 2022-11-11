@@ -4,9 +4,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
-require "spec_helper"
 require 'rspec/rails'
-require "capybara/rspec"
+require 'capybara/rspec'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -30,7 +29,7 @@ begin
   ActiveRecord::Migration.maintain_test_schema!
   Capybara.register_driver :selenium_chrome do |app|
     Capybara::Selenium::Driver.new(app, browser: :chrome)
-   end
+  end
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
