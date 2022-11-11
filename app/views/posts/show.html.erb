@@ -1,4 +1,4 @@
-<div><strong>Post #<%=@post.id%> by <%=@post.author.name%></strong> Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%>
+<div><strong>Post #<%=@post.id%> by <%=@post.author.name%>, <%=@post.title%></strong> Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%>
 <%= form_with model: Like, url:  "/users/#{@post.author_id}/posts/#{:post_id}/likes" do |form| %>
   <%= form.hidden_field :post_id, value: @post.id %>
   <%=form.submit "Like"%> 

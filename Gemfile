@@ -12,6 +12,9 @@ gem 'sprockets-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
+# Use device as authentication tool for users
+gem 'devise'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
@@ -45,6 +48,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+# Gem that solves N + 1 query
+
+gem 'bullet'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -75,6 +82,8 @@ group :test do
 end
 
 group :development, :test do
+  # Add database cleaner
+  gem 'database_cleaner'
   # test with rspec
   gem 'rspec-rails'
 end

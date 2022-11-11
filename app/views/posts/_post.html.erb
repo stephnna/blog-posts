@@ -1,10 +1,16 @@
-<div><strong>Post #<%=post.id%></strong><br><strong>Title: <%=post.title%></strong><br><%=post.text...%>
+<div><strong>Post #<%=post.id%></strong><br>
+<article class="post">
+<strong>Title: <%=post.title%></strong><br><%=post.text...%>
 Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%>
+</article>
+
 <%=render "likes/form", post: post%>
 <%=render "comments/form", post: post%>
+
 <ol>
 <%post.comments.each do |comment|%>
 <li><%=comment.author.name%>: <%=comment.text%></li><br>
 <%end%>
 </ol>
 </div><br>
+<button class="pagination">Pagination</button>

@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @user = current_user
-    @comments_all = Post.five_recent_comments_for_post(@user.id)
+    @user = User.includes(posts: [comments: [:author]]).find(1)
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(comments: [:author]).find(params[:id])
   end
 
   def new
