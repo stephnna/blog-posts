@@ -73,4 +73,11 @@ RSpec.describe 'User show', type: :feature do
       expect(page).to have_current_path user_posts_path(@first_user)
     end
   end
+
+  scenario 'redirects to posts show page when clicked' do
+    within all('.post')[0] do
+      find('a').click
+      expect(page).to have_current_path user_post_path(@first_user, @first_post)
+    end
+  end
 end
