@@ -9,8 +9,16 @@ Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%>
 
 <ol>
 <%post.comments.each do |comment|%>
-<li><%=comment.author.name%>: <%=comment.text%></li><br>
+<li><%=comment.author.name%>: <%=comment.text%>
+<%=button_to "del", comment_path(comment), method: :delete  %>
+</li><br>
 <%end%>
 </ol>
+<ul>
+  <% if @current_user&.admin?%>
+  <li><%= link_to "Edit Post", edit_post_path(@post) %></li>
+  <li><%= button_to "del", post_path(@post), method: :delete  %></li>
+  <%end%>
+</ul>
 </div><br>
 <button class="pagination">Pagination</button>
