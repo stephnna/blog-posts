@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new post_params
-   
+
     post.author = current_user
     if post.valid?
       post.save
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-  
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -46,6 +46,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :text)
   end
