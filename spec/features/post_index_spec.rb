@@ -80,7 +80,10 @@ RSpec.describe 'Post index', type: :feature do
     scenario 'displays number of likes for each post' do
       expect(page).to have_content("Likes: #{@first_post.likes_counter}")
     end
-  end
+
+    scenario 'displays pagination' do
+      expect(find('.pagination')).to be_truthy
+    end
 
   scenario 'redirects to posts show page when clicked' do
     within all('.post')[0] do
