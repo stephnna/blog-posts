@@ -7,11 +7,6 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  # vital for my navigation bar
-  def set_global_variables
-    @user = current_user
-  end
-
   def update_allowed_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password) }
     devise_parameter_sanitizer.permit(:account_update) do |u|
