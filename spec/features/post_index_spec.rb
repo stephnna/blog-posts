@@ -84,6 +84,7 @@ RSpec.describe 'Post index', type: :feature do
     scenario 'displays pagination' do
       expect(find('.pagination')).to be_truthy
     end
+  end
 
   scenario 'redirects to posts show page when clicked' do
     within all('.post')[0] do
