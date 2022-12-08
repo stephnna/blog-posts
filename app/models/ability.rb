@@ -15,7 +15,6 @@ class Ability
       comment.try(:user) == user
     end
     return unless user.admin?
-
     can :manage, :all
     #
     # The first argument to `can` is the action you are giving the user
