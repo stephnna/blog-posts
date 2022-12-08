@@ -1,11 +1,5 @@
 <a name="readme-top"></a>
 
-
-<div align="center">
-  <img src="https://github.com/microverseinc/readme-template/blob/master/murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -49,7 +43,6 @@
 </details>
 
 <!-- PROJECT DESCRIPTION -->
-
 # 📖 Blog Posts App <a name="about-project"></a>
 
 This **Blog Posts App** is a ruby on rails application that allows users to create and update posts.
@@ -124,7 +117,7 @@ To get a local copy up and running, follow these steps.
 
 ```sh
   git clone git@github.com:stephnna/blog-posts.git
-  cd rails-recipe-app
+  cd blog-posts
 ```
 
 ### Install

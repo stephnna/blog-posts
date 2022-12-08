@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   def create
     comment = Comment.new(params.require(:comment).permit(:post_id, :text))
     comment.author = current_user
