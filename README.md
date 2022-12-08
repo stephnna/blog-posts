@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -44,7 +43,6 @@
 </details>
 
 <!-- PROJECT DESCRIPTION -->
-
 # 📖 Blog Posts App <a name="about-project"></a>
 
 This **Blog Posts App** is a ruby on rails application that allows users to create and update posts.
