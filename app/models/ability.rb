@@ -14,7 +14,8 @@ class Ability
     can :destroy, Comment do |comment|
       comment.try(:user) == user
     end
-    return unless user.admin?
+    return unless user.role == 'admin'
+
     can :manage, :all
     #
     # The first argument to `can` is the action you are giving the user
